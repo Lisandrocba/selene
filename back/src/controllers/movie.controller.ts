@@ -23,12 +23,13 @@ export const createMovie = async (req: AuthRequest, res: Response): Promise<void
       return;
     }
 
-    const { title, description, year } = req.body;
+    const { title, description, imgUrl, year } = req.body;
     
     const newMovie = new Movie({
       title,
       description,
       year,
+      imgUrl,
       userId: req.user._id
     });
 
@@ -59,10 +60,10 @@ export const updateMovie = async (req: AuthRequest, res: Response): Promise<void
       return;
     }
 
-    const { title, description, year } = req.body;
+    const { title, description, year, imgUrl } = req.body;
     const updatedMovie = await Movie.findByIdAndUpdate(
       id,
-      { title, description, year },
+      { title, description, year, imgUrl },
       { new: true }
     );
 

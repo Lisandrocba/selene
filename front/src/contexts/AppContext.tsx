@@ -10,10 +10,8 @@ export interface IUser extends Document {
 type AppContextType = {
     userName: string | undefined;
     setUserName: React.Dispatch<React.SetStateAction<string | undefined>>;
-    users: IUser[]; 
-    setUsers: React.Dispatch<React.SetStateAction<IUser[]>>;
-    user: IUser[]; 
-    setUser: React.Dispatch<React.SetStateAction<IUser[]>>;
+    user: string; 
+    setUser: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export const MyContext = React.createContext<AppContextType | undefined>(undefined);
@@ -24,14 +22,11 @@ type AppContextProps = {
 
 const AppContext = ({children}: AppContextProps) => {
     const [userName, setUserName] = React.useState<string | undefined>(undefined);
-    const [users, setUsers] = React.useState<IUser[]>([]);
-    const [user, setUser] = React.useState<IUser[]>([]);
+    const [user, setUser] = React.useState<string>('');
 
     const values: AppContextType = {
         userName, 
         setUserName,
-        users, 
-        setUsers,
         user, 
         setUser
     };

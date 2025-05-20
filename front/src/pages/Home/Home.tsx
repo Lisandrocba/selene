@@ -3,7 +3,8 @@ import useHome from "./hooks/useHome"
 import type { IMovie } from "./types/homeTypes"
 
 const Home = () => {
-  const { isLoading, data } = useHome()
+  const { system } = useHome()
+  const { isLoading, data } = system
 
   if (isLoading) {
     return (

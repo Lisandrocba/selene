@@ -13,11 +13,11 @@ const Login = () => {
         password: ''
     })
     if (!context) {
-        console.log('No se encoentro un contexto')
+        console.log('No se encontro un contexto')
         navigate('/home')
         return null
     }
-    const { setUserName } = context;
+    const { setUserName, setUser } = context;
 
     const handleChange =(e: React.ChangeEvent<HTMLInputElement>)=>{
         setData({...datos , [e.target.name]: e.target.value})
@@ -29,6 +29,7 @@ const Login = () => {
         try {
             const result = await api.post('user/login', { username: datos.nombreUsuario, password: datos.password })
             setUserName(result.data.userName)
+            setUser(result.data._id)
             localStorage.setItem('token', result.data.token)
             navigate('/home')
         } catch (error) {

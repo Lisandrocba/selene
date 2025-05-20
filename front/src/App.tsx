@@ -5,6 +5,7 @@ import AppContext from './contexts/AppContext'
 import NuevaCuenta from './pages/NuevaCuenta/NuevaCuenta'
 import Home from './pages/Home/Home'
 import Layout from './pages/Layout/Layout'
+import NuevaMovie from './pages/NuevaMovie/NuevaMovie'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/nuevacuenta' element={<NuevaCuenta />}/>
+          <Route path='/nuevaPelicula' element={<NuevaMovie />}/>
           <Route element={<Layout />}>
             <Route path='/home' element={<Home />}/>
           </Route>

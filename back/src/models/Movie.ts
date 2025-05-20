@@ -4,6 +4,7 @@ export interface IMovie extends Document {
     title: string;
     description: string;
     year: string;
+    imgUrl: string;
     userId: mongoose.Types.ObjectId;
 }
 
@@ -19,6 +20,11 @@ const movieSchema: Schema = new Schema({
         trim: true,
     },
     year: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    imgUrl: {
         type: String,
         required: true,
         trim: true,

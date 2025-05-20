@@ -9,7 +9,11 @@ const useHome =()=> {
   const [data, setData] = useState<IMovie[] | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    actions.fetchData();
+  }, []);
+
+  const actions = {
+    fetchData: async () => {
       setIsLoading(true);
       try {
         const response = await api('movie');
@@ -23,12 +27,15 @@ const useHome =()=> {
       } finally {
         setIsLoading(false);
       }
-    };
+    }
+  }
 
-    fetchData();
-  }, []);
+  const system = {
+    isLoading, 
+    data
+  }
 
-  return { isLoading, data };
+  return { actions, system };
 }
 
 export default useHome;
