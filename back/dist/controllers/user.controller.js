@@ -1,6 +1,6 @@
-import Users from '../../models/Users.js';
+import Users from '../models/Users.js';
 import bcrypt from 'bcrypt';
-import { createToken } from '../../utils/auth.js';
+import { createToken } from '../services/auth.js';
 export const signup = async (req, res) => {
     const { password, username, email } = req.body;
     const user = await Users.findOne({ username });

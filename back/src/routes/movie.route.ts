@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import authMiddleware from '../../middleware/authMiddleware.js';
-import { createMovie, deleteMovie, getAllMovies, getMovieById, getMovieComments, updateMovie } from './movie.controller.js';
+import authMiddleware from '../middleware/authMiddleware.js';
+import { createMovie, deleteMovie, getAllMovies, getMovieById, getMovieComments, updateMovie } from '../controllers/movie.controller.js';
 
 const router = Router();
 

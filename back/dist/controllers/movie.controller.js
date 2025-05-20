@@ -1,5 +1,5 @@
-import Movie from '../../models/Movie.js';
-import Comment from '../../models/Comment.js';
+import Movie from '../models/Movie.js';
+import Comment from '../models/Comment.js';
 export const getAllMovies = async (req, res) => {
     try {
         const movies = await Movie.find();

@@ -1,7 +1,7 @@
 import express, { urlencoded } from 'express';
 import cors from 'cors';
-import router from './module/index.js';
-import { conectarDB } from './config/db.js';
+import router from './routes/index.js';
+import { conectarDB } from './services/db.js';
 const PORT = process.env.PORT || 3010;
 conectarDB();
 const app = express();

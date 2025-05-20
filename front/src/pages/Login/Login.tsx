@@ -1,8 +1,8 @@
 import axios from "axios"
 import React, { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { URL_BACK } from "../services/urlBack"
-import { MyContext } from "../contexts/AppContext"
+import { URL_BACK } from "../../services/urlBack"
+import { MyContext } from "../../contexts/AppContext"
 import toast from "react-hot-toast"
 
 const Login = () => {

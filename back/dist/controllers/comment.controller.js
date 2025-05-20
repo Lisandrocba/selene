@@ -1,5 +1,5 @@
-import Movie from '../../models/Movie.js';
-import Comment from '../../models/Comment.js';
+import Movie from '../models/Movie.js';
+import Comment from '../models/Comment.js';
 export const addComment = async (req, res) => {
     try {
         const { id } = req.params;

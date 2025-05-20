@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import Movie from '../../models/Movie.js';
-import Comment from '../../models/Comment.js';
-import { IUser } from '../../models/Users.js';
+import Movie from '../models/Movie.js';
+import Comment from '../models/Comment.js';
+import { IUser } from '../models/Users.js';
 
 interface AuthRequest extends Request {
   user?: IUser;

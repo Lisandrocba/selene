@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import Users from '../../models/Users.js';
+import Users from '../models/Users.js';
 import bcrypt from 'bcrypt';
-import { createToken } from '../../utils/auth.js';
+import { createToken } from '../services/auth.js';
 
 export const signup = async (req: Request, res: Response) => {
     const {password, username, email} = req.body;

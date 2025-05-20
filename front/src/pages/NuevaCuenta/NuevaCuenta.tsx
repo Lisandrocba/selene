@@ -1,9 +1,9 @@
 import axios from "axios"
 import { useContext, useState } from "react"
 import toast from "react-hot-toast"
-import { MyContext } from "../contexts/AppContext"
+import { MyContext } from "../../contexts/AppContext"
 import { useNavigate } from "react-router-dom"
-import { URL_BACK } from "../services/urlBack"
+import { URL_BACK } from "../../services/urlBack"
 
 const NuevaCuenta = () => {
   const navigate = useNavigate()
