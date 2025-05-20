@@ -1,9 +1,9 @@
 import axios from "axios"
+import api from "../../services/axiosConfig"
 import { useContext, useState } from "react"
 import toast from "react-hot-toast"
 import { MyContext } from "../../contexts/AppContext"
 import { useNavigate } from "react-router-dom"
-import { URL_BACK } from "../../services/urlBack"
 
 const NuevaCuenta = () => {
   const navigate = useNavigate()
@@ -28,7 +28,7 @@ const NuevaCuenta = () => {
     const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) =>{
         e.preventDefault()
         try {
-            const result = await axios.post(`${URL_BACK}user/signup`, { username: datos.nombreUsuario, email: datos.email, password: datos.password })
+            const result = await api.post('user/signup', { username: datos.nombreUsuario, email: datos.email, password: datos.password })
             setUserName(result.data.userName)
             localStorage.setItem('token', result.data.token)
             toast.success(result.data.message)

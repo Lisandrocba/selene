@@ -1,7 +1,7 @@
 import axios from "axios"
+import api from "../../services/axiosConfig"
 import React, { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { URL_BACK } from "../../services/urlBack"
 import { MyContext } from "../../contexts/AppContext"
 import toast from "react-hot-toast"
 
@@ -27,7 +27,7 @@ const Login = () => {
     const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) =>{
         e.preventDefault()
         try {
-            const result = await axios.post(`${URL_BACK}user/login`, { username: datos.nombreUsuario, password: datos.password })
+            const result = await api.post('user/login', { username: datos.nombreUsuario, password: datos.password })
             setUserName(result.data.userName)
             localStorage.setItem('token', result.data.token)
             navigate('/home')

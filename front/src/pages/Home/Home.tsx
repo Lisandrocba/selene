@@ -1,4 +1,6 @@
+import Item from "./components/Item"
 import useHome from "./hooks/useHome"
+import type { IMovie } from "./types/homeTypes"
 
 const Home = () => {
   const { isLoading, data } = useHome()
@@ -12,9 +14,11 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div className="flex flex-row flex-wrap justify-center items-stretch gap-5">
       {
-        data && 'hola mundo'
+        data && data.map((item: IMovie) => (
+          <Item key={item._id} item={item} />
+        ))
       }
     </div>
   )
