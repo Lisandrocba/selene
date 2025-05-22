@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
-dotenv.config({path: '.env'});
+dotenv.config({path: '.env.example'});
 
 export const conectarDB = async ()=>{
     try{

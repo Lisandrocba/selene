@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import Users from '../models/Users.js';
 import dotenv from 'dotenv';
-dotenv.config({ path: '.env' });
+dotenv.config({ path: '.env.example' });
 const key = process.env.PRIVATE_KEY;
 const authMiddleware = async (req, res, next) => {
     const token = req.header('Authorization')?.replace('Bearer ', '');

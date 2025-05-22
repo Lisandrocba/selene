@@ -3,7 +3,7 @@ import jwt, { JwtPayload } from 'jsonwebtoken';
 import Users from '../models/Users.js';
 import dotenv from 'dotenv';
 
-dotenv.config({path: '.env'});
+dotenv.config({path: '.env.example'});
 
 const key = process.env.PRIVATE_KEY;
 
