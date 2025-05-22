@@ -15,6 +15,11 @@ const movieSchema = new Schema({
         required: true,
         trim: true,
     },
+    imgUrl: {
+        type: String,
+        required: true,
+        trim: true,
+    },
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Users',

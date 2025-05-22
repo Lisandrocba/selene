@@ -15,11 +15,12 @@ export const createMovie = async (req, res) => {
             res.status(401).json({ message: 'Usuario no autenticado' });
             return;
         }
-        const { title, description, year } = req.body;
+        const { title, description, imgUrl, year } = req.body;
         const newMovie = new Movie({
             title,
             description,
             year,
+            imgUrl,
             userId: req.user._id
         });
         const savedMovie = await newMovie.save();
@@ -45,8 +46,8 @@ export const updateMovie = async (req, res) => {
             res.status(403).json({ message: 'No tienes permiso para editar esta película' });
             return;
         }
-        const { title, description, year } = req.body;
-        const updatedMovie = await Movie.findByIdAndUpdate(id, { title, description, year }, { new: true });
+        const { title, description, year, imgUrl } = req.body;
+        const updatedMovie = await Movie.findByIdAndUpdate(id, { title, description, year, imgUrl }, { new: true });
         res.status(200).json({ message: 'Película actualizada con éxito', movie: updatedMovie });
     }
     catch (error) {

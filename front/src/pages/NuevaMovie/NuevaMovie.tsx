@@ -54,8 +54,13 @@ const NuevaMovie = () => {
           />
           {system.errors.imgUrl && <div className="w-full text-red-950 text-base">{system.errors.imgUrl}</div>}
         </div>
-
-        <button type="submit" className="px-5 py-2 bg-gray-700 rounded-sm text-amber-50 cursor-pointer mt-5">Guardar Película</button>
+        {
+          system.isLoading ? (
+            <p className="px-10 py-2 bg-gray-700 rounded-sm text-amber-50 cursor-pointer mt-5">Cargando...</p>
+          ) : (
+            <button type="submit" className="px-5 py-2 bg-gray-700 rounded-sm text-amber-50 cursor-pointer mt-5">Guardar Película</button>
+          )
+        }
     </form>
     </div>
   )

@@ -12,11 +12,7 @@ const Login = () => {
         nombreUsuario: '',
         password: ''
     })
-    if (!context) {
-        console.log('No se encontro un contexto')
-        navigate('/home')
-        return null
-    }
+    
     const { setUserName, setUser } = context;
 
     const handleChange =(e: React.ChangeEvent<HTMLInputElement>)=>{
