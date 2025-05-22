@@ -37,7 +37,7 @@ const NuevaCuenta = () => {
         }
     }
   return (
-    <div className="h-screen flex flex-col justify-center items-center bg-[url('./HD-wallpaper-argentina-copa-america-champions-2021.webp')]  lg:bg-contain">
+    <div className="h-[90vh] flex flex-col justify-center items-center bg-[url('./HD-wallpaper-argentina-copa-america-champions-2021.webp')]  lg:bg-contain">
       <div className="bg-[#d8da0a] p-10 rounded-xl shadow-lg text-black">
           <p className="text-xl underline">Cuenta Nueva</p>
             <form onSubmit={handleSubmit} className="flex flex-col justify-center items-start p-10">

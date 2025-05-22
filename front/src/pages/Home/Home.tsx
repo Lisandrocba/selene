@@ -8,7 +8,7 @@ const Home = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-[90vh]">
         <p className="text-2xl">Cargando...</p>
       </div>
     )

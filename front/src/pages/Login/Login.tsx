@@ -38,7 +38,7 @@ const Login = () => {
     }
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center lg:bg-contain">
+    <div className="h-[90vh] flex flex-col justify-center items-center lg:bg-contain">
         <div className="bg-[#d8da0a] p-10 rounded-xl shadow-lg text-black">
             <p className="text-xl underline">Login</p>
             <form onSubmit={handleSubmit} className="flex flex-col justify-center items-start p-10">

@@ -4,7 +4,7 @@ import logo from '/image.png'
 const Layout = () => {
   const navigate = useNavigate()
   return (
-    <div className='flex flex-col gap-10 justify-start items-center min-h-[93vh] min-w-[90vw]'>
+    <div className='flex flex-col gap-10 justify-start items-center min-h-[80vh] min-w-[90vw]'>
       <div className='flex flex-row justify-between item-center w-full'>
         <Link to='/home' className='flex flex-row items-center pr-5 m-0 bg-black'>
           <img className='w-36' src={logo} alt="Logo" />
