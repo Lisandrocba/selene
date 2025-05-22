@@ -2,5 +2,5 @@ import { Router } from 'express';
 import authMiddleware from '../middleware/authMiddleware.js';
 import { addComment } from '../controllers/comment.controller.js';
 const router = Router();
-router.post('/', authMiddleware, addComment);
+router.post('/:id', authMiddleware, addComment);
 export default router;

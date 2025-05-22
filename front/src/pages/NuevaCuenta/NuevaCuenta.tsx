@@ -13,11 +13,6 @@ const NuevaCuenta = () => {
         email: '',
         password: ''
     })
-    if (!context) {
-        console.log('No se encoentro un contexto')
-        navigate('/home')
-        return null
-    }
     const { setUserName } = context;
 
     const handleChange =(e: React.ChangeEvent<HTMLInputElement>)=>{

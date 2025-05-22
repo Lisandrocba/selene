@@ -8,20 +8,17 @@ export const addComment = async (req, res) => {
             res.status(401).json({ message: 'Usuario no autenticado' });
             return;
         }
-        // Verificar que la película exista
         const movie = await Movie.findById(id);
         if (!movie) {
             res.status(404).json({ message: 'Película no encontrada' });
             return;
         }
-        // Crear el nuevo comentario
         const newComment = new Comment({
             comment,
             movieId: id,
             userId: req.user._id
         });
         const savedComment = await newComment.save();
-        // Devolver el comentario con información del usuario
         const populatedComment = await Comment.findById(savedComment._id)
             .populate('userId', 'username');
         res.status(201).json({

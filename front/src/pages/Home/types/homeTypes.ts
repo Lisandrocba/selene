@@ -3,6 +3,7 @@ export interface IMovie {
   title: string;
   description: string;
   imgUrl: string;
+  year: string;
 }
 
 export interface ItemProps {

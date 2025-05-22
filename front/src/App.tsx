@@ -6,6 +6,7 @@ import NuevaCuenta from './pages/NuevaCuenta/NuevaCuenta'
 import Home from './pages/Home/Home'
 import Layout from './pages/Layout/Layout'
 import NuevaMovie from './pages/NuevaMovie/NuevaMovie'
+import DetallePelicula from './pages/DetallePelicula/DetallePelicula'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path='/nuevaPelicula' element={<NuevaMovie />}/>
           <Route element={<Layout />}>
             <Route path='/home' element={<Home />}/>
+            <Route path='/pelicula/:id' element={<DetallePelicula />}/>
           </Route>
         </Routes>
       </BrowserRouter>
